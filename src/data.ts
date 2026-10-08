@@ -17,6 +17,15 @@ export type NewsItem = {
   caution?: boolean
 }
 
+export type ServiceIcon = 'clipboard' | 'laptop' | 'mail' | 'library' | 'chart' | 'wallet'
+
+export type ServiceItem = {
+  name: string
+  description: string
+  href: string
+  icon: ServiceIcon
+}
+
 export const faculties: Faculty[] = [
   { slug: 'itdi', name: 'Information Technology & Digital Innovation', eyebrow: 'Digital futures', description: 'Explore technology, creative media, digital business, and safety-focused fields.', programs: ['Information Technology and Digital Innovation', 'Digital Innovation and Art Media', 'Digital Business Technology', 'Safety Engineering'], source: 'https://itdi.northbkk.ac.th/', accent: 'from-cyan-500 to-blue-600' },
   { slug: 'business', name: 'Business Administration', eyebrow: 'Enterprise & leadership', description: 'A broad business portfolio spanning accounting, management, marketing, and logistics.', programs: ['Accounting', 'Management', 'Digital Marketing', 'Logistics and Supply Chain'], source: 'https://ba.northbkk.ac.th/', accent: 'from-amber-400 to-orange-600' },
@@ -35,7 +44,7 @@ export const newsItems: NewsItem[] = [
   { title: 'Graduate admissions update', category: 'Graduate study', dateLabel: '23 December 2568', description: 'A graduate-admissions headline is listed by the Graduate School. Details remain on the official site.', source: 'https://gs.northbkk.ac.th/', caution: true },
 ]
 
-export const serviceItems = [
+export const serviceItems: ServiceItem[] = [
   { name: 'Registrar', description: 'Educational services, announcements, and account-based academic tools.', href: 'https://reg.northbkk.ac.th/registrar/home.asp', icon: 'clipboard' },
   { name: 'E-learning', description: 'Course categories across faculties, lifelong learning, credit bank, and skills programs.', href: 'https://elearning.northbkk.ac.th/', icon: 'laptop' },
   { name: 'University email', description: 'A verified online-service label; access through the official university homepage.', href: 'https://northbkk.ac.th/', icon: 'mail' },
