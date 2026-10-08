@@ -1,7 +1,7 @@
 # North Bangkok University public-site research
 
-**Research scope:** public, unauthenticated pages under `northbkk.ac.th` and its linked subdomains.  
-**Checked:** 2026-10-08 (Asia/Bangkok).  
+**Research scope:** public, unauthenticated pages under `northbkk.ac.th` and its linked subdomains.
+**Checked:** 2026-10-08 (Asia/Bangkok).
 **Use in mockup:** source-backed labels, destinations, information architecture, and short factual summaries only. Do not reuse the source site's prose, imagery, staff/student names, testimonials, or visual assets.
 
 ## Evidence standard
@@ -97,4 +97,3 @@ The faculty destination itself is the source for each row; lists below are selec
 1. **Verified, reusable as facts:** institution name, faculty/college names, selected program names, visible service labels, campus phone numbers, and dated headline titles — each must retain the source URL in content data or editorial notes above.
 2. **Create new copy:** hero text, card summaries, CTA microcopy, service descriptions, meta descriptions, and all UI labels not directly listed as verified. These are mock content and should not claim official policy.
 3. **Do not reuse:** source photographs, logos without permission, long descriptions, testimonial text, student/staff identities, or news/article body text.
-
