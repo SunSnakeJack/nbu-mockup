@@ -45,3 +45,7 @@ npm run preview
 Research notes and source URLs are documented in [`docs/research.md`](docs/research.md). Source URLs are also retained alongside factual entries in `src/data.ts`.
 
 The official `student.php` endpoint returned HTTP 403 to the public crawler during research, so this mockup does not infer or recreate its contents. Authenticated university services are presented only as outbound links.
+
+## Visual reconstruction notes
+
+Round 2 reconstructs the approved screenshot-backed page geometry without copying source imagery, logos, fonts, QR codes, or other unlicensed assets. See [`docs/visual-implementation-notes.md`](docs/visual-implementation-notes.md) for the complete substitution ledger and fidelity limitations.
