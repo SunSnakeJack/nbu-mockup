@@ -7,12 +7,12 @@
 
 ## Screenshot artifact ledger
 
-| Filename/path | Requested viewport | URL/UI state | Capture method | Status | Measurement status |
+| Filename/path | Actual viewport | URL / UI state | Timestamp | Capture method | Rights/provenance | Measurement status |
 | --- | --- | --- | --- | --- | --- |
-| `homepage-1440x900-initial.png` | 1440 x 900 | Homepage / initial | Chrome headless fallback, 7 s virtual time | Captured; 1,010,799 bytes | Actual PNG 1440 x 900; visual measurements estimated |
-| `homepage-768x1024-initial.png` | 768 x 1024 | Homepage / initial | Chrome headless fallback, 7 s virtual time | Captured; 447,187 bytes | Actual PNG 768 x 1024; visual measurements estimated |
-| `homepage-390x844-initial.png` | 390 x 844 | Homepage / initial | Chrome headless fallback, 7 s virtual time | Captured; 339,613 bytes | Actual PNG 390 x 844; visual measurements estimated |
-| `bachelor-1440x900-initial.png` | 1440 x 900 | Bachelor page / initial | Chrome headless fallback, 7 s virtual time | Captured; 403,223 bytes | Actual PNG 1440 x 900; visual measurements estimated |
+| `homepage-1440x900-initial.png` | 1440 x 900 | <https://northbkk.ac.th/> / initial | 2026-10-08 21:44 +07:00 | Google Chrome headless, isolated temp profile, 7 s virtual time | Third-party/public-site screenshot; no licence evidence; external-only/no redistribution | Actual PNG dimensions; visual measurements are estimates |
+| `homepage-768x1024-initial.png` | 768 x 1024 | <https://northbkk.ac.th/> / initial | 2026-10-08 21:44 +07:00 | Google Chrome headless, isolated temp profile, 7 s virtual time | Third-party/public-site screenshot; no licence evidence; external-only/no redistribution | Actual PNG dimensions; visual measurements are estimates |
+| `homepage-390x844-initial.png` | 390 x 844 | <https://northbkk.ac.th/> / initial | 2026-10-08 21:44 +07:00 | Google Chrome headless, isolated temp profile, 7 s virtual time | Third-party/public-site screenshot; no licence evidence; external-only/no redistribution | Actual PNG dimensions; visual measurements are estimates |
+| `bachelor-1440x900-initial.png` | 1440 x 900 | <https://northbkk.ac.th/bachelor.php> / initial | 2026-10-08 21:45 +07:00 | Google Chrome headless, isolated temp profile, 7 s virtual time | Third-party/public-site screenshot; no licence evidence; external-only/no redistribution | Actual PNG dimensions; visual measurements are estimates |
 
 The first unprivileged AO CLI call was unavailable, but the escalated absolute AO CLI succeeded: it connected, opened the homepage, waited for load, captured accessibility snapshots, accepted Toggle-navigation and Next-carousel clicks, and accepted scroll commands. AO painted-panel screenshot calls timed out; Chrome headless was used only under the Lead-authorized fallback.
 
