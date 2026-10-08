@@ -20,7 +20,9 @@ This is a screenshot-backed handoff guardrail, not a reproduction specification.
 | Brand, surface, text, and accent colours | Grey ~#727e87; blue ~#0d6efd; button ~#129bd5; card ~#a8d0f0 | Estimate | Manual visual sampling of PNG pixels. |
 | Font family, sizes, weights, line heights | Thai sans-serif appears bold in navigation and display-weight in banners; computed values unknown | Observation / unknown CSS | Visually inspected PNG; no CSS inspection. |
 | Hero/banner aspect ratio and crop | ~1298 x 472 desktop; tall/cropped mobile presentation | Estimate / observed state | PNG ruler estimate. |
-| Footer layout | Not visually captured; AO snapshot exposes organisation, faculty, staff, and contact sections | Unknown visual / observed structure | AO painted captures produced no output/PNG even after a visible-panel retry; PDF viewer was blank; final CUA runtime could not start. |
+| Footer layout | Saturated-blue two-column footer; yellow headings, white links, divider, copyright left/social icons right | Estimate / observed state | Visually inspected 1440 x 6000 tall Chrome PNG. |
+| Highlights/news grids | Highlights: 4 cards across on dark-blue photo overlay; News: 4 columns x 2 rows on near-white surface | Estimate / observed state | Visually inspected 1440 x 6000 tall Chrome PNG. |
+| Affiliate logos | Two loose desktop rows on white; exact logos/assets not reusable | Observed state | Visually inspected 1440 x 6000 tall Chrome PNG. |
 | Responsive breakpoints and menu transformation | At 768 and 390 primary nav collapses to hamburger; utility bar wraps at 768 and overflows at 390 | Observed states; breakpoint thresholds unknown | Three visual PNGs. |
 
 ## Verified information architecture (non-visual)

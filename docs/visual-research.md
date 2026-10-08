@@ -53,6 +53,20 @@ After the user confirmed the AO Browser panel was visible, the escalated AO CLI 
 
 The final approved separate-browser fallback was attempted through the computer-use/CUA Chrome surface. Its required initialization failed before a browser surface was available: `failed to start Node runtime: The system cannot find the path specified. (os error 3)`. No CUA action, capture, or web-page interaction occurred. This exhausts the approved capture paths; the below-fold requirement is blocked by rendering/runtime availability, not treated as satisfied by structural snapshots.
 
+**Superseded by the tall-window capture below.** The preceding PDF/AO/CUA limitations remain useful diagnostic history, but no longer block desktop below-fold visual coverage.
+
+## Full desktop below-fold capture (visually inspected)
+
+`homepage-1440x6000-tall.png` was captured at 2026-10-08 22:35 +07:00 with installed Chrome headless, an isolated temporary profile, `--hide-scrollbars`, a 10-second virtual-time budget, and explicit `--window-size=1440,6000`. Its actual PNG dimensions are 1440 x 6000 (2,697,816 bytes). The rendered page ends at roughly y=3,360; the remainder is blank because the requested viewport is taller than the document. This is a desktop screen-layout capture, not a print rendering.
+
+- **Pathways:** five light-blue tiles appear in one centered row, about 196 x 188 px each, with ~24 px gaps. Each has a dark navy icon centered over a Thai label; the section is on white with substantial vertical whitespace.
+- **NBU Highlights:** a full-width dark cobalt-blue photo-overlay band begins around y=1,108. Centered white `NBU Highlights` type sits above four equal white cards. Each card has a thin pale border/radius, a photographic/graphic image area, then centered multi-line Thai body text. The background image remains visibly blue-tinted behind the grid.
+- **Public-relations news:** a near-white/light-grey section uses a centered large dark Thai heading and a four-column card grid. Eight cards are visible in two rows. Cards have pale borders, white surfaces, large poster-style images, and centered Thai titles. A small blue rounded “all news” button is centered below the grid.
+- **Affiliates:** a white band uses a centered large dark Thai heading, then partner logos arranged across two loose rows (alumni, football club, Siam, SBAC, NBU Poll, SciTech). These third-party/university marks are visual references only and are not cleared for reuse.
+- **Footer/contact:** a saturated-blue footer has a two-column content layout: left faculty heading/list and right staff/contact groups. Headings are yellow, body links/numbers are white, and a thin low-contrast divider separates the copyright/social row. Copyright is left-aligned; four circular social icons sit right-aligned. The visible telephone entries match the separately sourced public footer facts.
+
+The capture also shows an important dynamic-content limitation: the tall run selected a different hero carousel slide than the earlier 1440 x 900 PNG. Treat carousel artwork as time/state dependent; do not use a single slide as a stable content source or reuse its artwork.
+
 ## Text-only fallback (not visual evidence)
 
 The following navigation/content facts were recovered from public page text only. They can help a later researcher select pages to inspect visually, but they do not establish visual order, styling, or interaction.
