@@ -2,7 +2,7 @@
 
 ## Scope
 
-This is a handoff guardrail, not a reproduction specification. The Round 2 session could not access the required AO visual browser, so it contains no measured source-site styles. A later visual pass must replace `unknown` entries with screenshot-backed measurements and cite the screenshot filename from `docs/reference-manifest.md`.
+This is a screenshot-backed handoff guardrail, not a reproduction specification. Three homepage viewport PNGs and one bachelor-page PNG were captured and visually inspected. Values marked `estimate` are screenshot ruler/manual-sampling readings; only PNG dimensions are observed metadata. Computed CSS, font files, and exact breakpoints remain unknown.
 
 ## Measurement status
 
@@ -15,13 +15,13 @@ This is a handoff guardrail, not a reproduction specification. The Round 2 sessi
 | Utility-bar height | ~78 px desktop; ~129 px tablet; ~170 px mobile | Estimate | PNG ruler estimate; mobile utility content visibly overflows. |
 | Desktop navigation height | ~56 px | Estimate | Desktop/tablet PNG ruler estimate. |
 | Main container max-width | ~1298 px carousel panel at 1440 | Estimate | Desktop PNG ruler estimate. |
-| Grid gaps / section spacing | Unknown | Not observed | No rendered page. |
-| Card radius / border / shadow | Unknown | Not observed | No rendered page. |
+| Grid gaps / section spacing | Desktop cards begin below a large white gap; tablet cards use ~24 px gaps | Estimate | Visually inspected PNG ruler estimate. |
+| Card radius / border / shadow | Small radius ~4-6 px; no reliable shadow visible | Estimate | Visually inspected PNG. |
 | Brand, surface, text, and accent colours | Grey ~#727e87; blue ~#0d6efd; button ~#129bd5; card ~#a8d0f0 | Estimate | Manual visual sampling of PNG pixels. |
-| Font family, sizes, weights, line heights | Unknown | Not observed | Font requests/CSS were not visually inspected. |
+| Font family, sizes, weights, line heights | Thai sans-serif appears bold in navigation and display-weight in banners; computed values unknown | Observation / unknown CSS | Visually inspected PNG; no CSS inspection. |
 | Hero/banner aspect ratio and crop | ~1298 x 472 desktop; tall/cropped mobile presentation | Estimate / observed state | PNG ruler estimate. |
-| Footer layout | Unknown | Not observed | Below-fold content was not visually inspected. |
-| Responsive breakpoints and menu transformation | Unknown | Not observed | No multi-viewport capture. |
+| Footer layout | Not visually captured; AO snapshot exposes organisation, faculty, staff, and contact sections | Unknown visual / observed structure | Painted AO capture timed out; full-page CDP capture failed. |
+| Responsive breakpoints and menu transformation | At 768 and 390 primary nav collapses to hamburger; utility bar wraps at 768 and overflows at 390 | Observed states; breakpoint thresholds unknown | Three visual PNGs. |
 
 ## Verified information architecture (non-visual)
 

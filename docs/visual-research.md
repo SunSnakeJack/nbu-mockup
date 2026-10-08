@@ -45,6 +45,10 @@ Manual visual sampling from PNG pixels (not a colour-picker export): utility hea
 - The homepage exposes `Previous` and `Next` carousel buttons; AO accepted a click on `Next` followed by a 1-second wait. The snapshot does not identify the rendered slide, so slide transition visuals remain unverified.
 - AO scrolling commands were issued for 800 px and then 1600 px. The accessibility tree continued to expose NBU Highlights, public-relations news, affiliated organisations, faculty links, staff, and contact headings. Because AO painted screenshots timed out, this is below-fold **structural/interaction evidence**, not a visual footer capture.
 
+## Below-fold capture limitation
+
+Chrome headless successfully produced `homepage-full-desktop.pdf` (6,967,171 bytes) from the public homepage at a 1440 x 900 window. This is complete-page **print-rendered** evidence, not a screen-layout capture. Installed Poppler/Python renderers were not available. A Chrome PDF-viewer fallback at `file:///.../homepage-full-desktop.pdf#page=2&zoom=page-width` did create a 1440 x 900 PNG, but visual inspection found it uniformly dark/blank (5,852 bytes), so it cannot support below-fold visual claims. Two safe CDP full-page attempts also failed: the first could not cast the selected page endpoint to `System.Uri`; the retry reported `WebSocketException: Unable to connect to the remote server` and then `No CDP response for Page.getLayoutMetrics`. No more CDP retries were made. Therefore NBU Highlights, news, affiliated organisations, and footer/contact areas remain structurally observed through AO but **not visually inspected** in this pass.
+
 ## Text-only fallback (not visual evidence)
 
 The following navigation/content facts were recovered from public page text only. They can help a later researcher select pages to inspect visually, but they do not establish visual order, styling, or interaction.
@@ -64,8 +68,8 @@ The following navigation/content facts were recovered from public page text only
 
 | Area | Result | Evidence | Handoff consequence |
 | --- | --- | --- | --- |
-| Main homepage navigation | Text links were available through public-page extraction; visual states were not inspected. | <https://northbkk.ac.th/> | Re-inspect with a painted browser before replicating any menu behaviour. |
-| Dropdowns, hover/focus, keyboard controls, carousel controls | Not observed. | No compliant visual browser access | Treat as unknown; do not claim a source interaction model. |
+| Main homepage navigation | Visual initial states captured at desktop/tablet/mobile; AO snapshot and click tested Toggle navigation. | <https://northbkk.ac.th/> | Desktop links are visible; collapsed hamburger is visible at 768/390. Expanded visual menu remains unverified. |
+| Dropdowns, hover/focus, keyboard controls, carousel controls | AO click accepted for Toggle navigation and Next; visual expanded/dropdown/transition states were not captured. | AO browser session, <https://northbkk.ac.th/> | Treat expanded/hover/keyboard behaviour as unknown. |
 | Student page | Public text crawler previously received HTTP 403 Forbidden. | <https://northbkk.ac.th/student.php> | Do not infer a student dashboard or its design. |
 | Registrar/e-learning authenticated flows | Landing pages available; signed-in flows not inspected. | <https://reg.northbkk.ac.th/registrar/home.asp>, <https://elearning.northbkk.ac.th/> | Present only as external-service handoffs. |
 

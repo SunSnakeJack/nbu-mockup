@@ -13,6 +13,8 @@
 | `homepage-768x1024-initial.png` | 768 x 1024 | <https://northbkk.ac.th/> / initial | 2026-10-08 21:44 +07:00 | Google Chrome headless, isolated temp profile, 7 s virtual time | Third-party/public-site screenshot; no licence evidence; external-only/no redistribution | Actual PNG dimensions; visual measurements are estimates |
 | `homepage-390x844-initial.png` | 390 x 844 | <https://northbkk.ac.th/> / initial | 2026-10-08 21:44 +07:00 | Google Chrome headless, isolated temp profile, 7 s virtual time | Third-party/public-site screenshot; no licence evidence; external-only/no redistribution | Actual PNG dimensions; visual measurements are estimates |
 | `bachelor-1440x900-initial.png` | 1440 x 900 | <https://northbkk.ac.th/bachelor.php> / initial | 2026-10-08 21:45 +07:00 | Google Chrome headless, isolated temp profile, 7 s virtual time | Third-party/public-site screenshot; no licence evidence; external-only/no redistribution | Actual PNG dimensions; visual measurements are estimates |
+| `homepage-full-desktop.pdf` | Print pages (not screen viewport) | <https://northbkk.ac.th/> / full-page print | 2026-10-08 22:21 +07:00 | Chrome headless `--print-to-pdf`, 1440 x 900 window | Third-party/public-site print output; no licence evidence; external-only/no redistribution | Complete-page print evidence; not visually rendered in this environment |
+| `homepage-full-desktop-page-2-render.png` | 1440 x 900 | Local PDF page 2 / PDF-viewer attempt | 2026-10-08 22:24 +07:00 | Chrome headless local-PDF capture | External diagnostic only; no redistribution | Visually inspected: uniformly dark/blank; unusable as page-content evidence |
 
 The first unprivileged AO CLI call was unavailable, but the escalated absolute AO CLI succeeded: it connected, opened the homepage, waited for load, captured accessibility snapshots, accepted Toggle-navigation and Next-carousel clicks, and accepted scroll commands. AO painted-panel screenshot calls timed out; Chrome headless was used only under the Lead-authorized fallback.
 
@@ -28,8 +30,8 @@ Suggested filename convention (do not treat as an existing file):
 
 | Reference | URL | Access status / purpose | Reuse status |
 | --- | --- | --- | --- |
-| Public homepage | <https://northbkk.ac.th/> | Text-confirmed navigation/content source; visual state not captured in this pass. | Source copy/visual assets not cleared. |
-| Bachelor page | <https://northbkk.ac.th/bachelor.php> | Text-confirmed public study-pathway page. | Not cleared. |
+| Public homepage | <https://northbkk.ac.th/> | Visual initial states captured at three exact PNG viewport sizes; AO live interaction snapshots also collected. | Source copy/visual assets not cleared. |
+| Bachelor page | <https://northbkk.ac.th/bachelor.php> | Visual initial state captured at 1440 x 900 PNG. | Not cleared. |
 | Graduate page | <https://northbkk.ac.th/graduate.php> | Text-confirmed public study-pathway page. | Not cleared. |
 | Short courses | <https://northbkk.ac.th/shortcourse.php> | Text-confirmed public course page. | Not cleared. |
 | IT faculty | <https://itdi.northbkk.ac.th/> | Text-confirmed public faculty page. | Not cleared. |
