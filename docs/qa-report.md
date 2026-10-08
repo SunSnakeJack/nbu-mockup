@@ -1,7 +1,7 @@
 # QA report — NBU unofficial mockup
 
-**Tested lineage:** Worker 2 commits `e300521`, `142bdf8`, and `a10bbe7`, cherry-picked locally as `ee21d6b`, `ed7f63e`, and `aca8a33` respectively.  
-**Test date:** 2026-10-08 (Asia/Bangkok)  
+**Tested lineage:** Worker 2 commits `e300521`, `142bdf8`, and `a10bbe7`, cherry-picked locally as `ee21d6b`, `ed7f63e`, and `aca8a33` respectively.
+**Test date:** 2026-10-08 (Asia/Bangkok)
 **Overall decision:** **PASS with one browser-automation limitation.** No implementation defect was confirmed.
 
 ## Environment and setup
