@@ -8,18 +8,18 @@ This is a handoff guardrail, not a reproduction specification. The Round 2 sessi
 
 | Token or layout property | Value | Status | Method/source |
 | --- | --- | --- | --- |
-| Desktop viewport | Unknown | Not observed | Requested 1440 x 900 capture was unavailable. |
-| Tablet viewport | Unknown | Not observed | Requested 768 x 1024 capture was unavailable. |
-| Mobile viewport | Unknown | Not observed | Requested 390 x 844 capture was unavailable. |
-| Header height | Unknown | Not observed | No rendered page. |
-| Utility-bar height | Unknown | Not observed | No rendered page. |
-| Desktop navigation height | Unknown | Not observed | No rendered page. |
-| Main container max-width | Unknown | Not observed | No rendered page. |
+| Desktop viewport | 1440 x 900 PNG | Observed | Chrome headless PNG metadata. |
+| Tablet viewport | 768 x 1024 PNG | Observed | Chrome headless PNG metadata. |
+| Mobile viewport | 390 x 844 PNG | Observed | Chrome headless PNG metadata. |
+| Header height | ~78 px | Estimate | Desktop PNG ruler estimate. |
+| Utility-bar height | ~78 px desktop; ~129 px tablet; ~170 px mobile | Estimate | PNG ruler estimate; mobile utility content visibly overflows. |
+| Desktop navigation height | ~56 px | Estimate | Desktop/tablet PNG ruler estimate. |
+| Main container max-width | ~1298 px carousel panel at 1440 | Estimate | Desktop PNG ruler estimate. |
 | Grid gaps / section spacing | Unknown | Not observed | No rendered page. |
 | Card radius / border / shadow | Unknown | Not observed | No rendered page. |
-| Brand, surface, text, and accent colours | Unknown | Not observed | No painted pixels; do not invent approximate hex codes. |
+| Brand, surface, text, and accent colours | Grey ~#727e87; blue ~#0d6efd; button ~#129bd5; card ~#a8d0f0 | Estimate | Manual visual sampling of PNG pixels. |
 | Font family, sizes, weights, line heights | Unknown | Not observed | Font requests/CSS were not visually inspected. |
-| Hero/banner aspect ratio and crop | Unknown | Not observed | No visual capture. |
+| Hero/banner aspect ratio and crop | ~1298 x 472 desktop; tall/cropped mobile presentation | Estimate / observed state | PNG ruler estimate. |
 | Footer layout | Unknown | Not observed | Below-fold content was not visually inspected. |
 | Responsive breakpoints and menu transformation | Unknown | Not observed | No multi-viewport capture. |
 

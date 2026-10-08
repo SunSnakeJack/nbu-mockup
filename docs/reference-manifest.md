@@ -9,15 +9,16 @@
 
 | Filename/path | Requested viewport | URL/UI state | Capture method | Status | Measurement status |
 | --- | --- | --- | --- | --- | --- |
-| None | 1440 x 900 | Homepage / initial | AO Browser unavailable | Not captured | No measurements |
-| None | 768 x 1024 | Homepage / initial | AO Browser unavailable | Not captured | No measurements |
-| None | 390 x 844 | Homepage / initial | AO Browser unavailable | Not captured | No measurements |
+| `homepage-1440x900-initial.png` | 1440 x 900 | Homepage / initial | Chrome headless fallback, 7 s virtual time | Captured; 1,010,799 bytes | Actual PNG 1440 x 900; visual measurements estimated |
+| `homepage-768x1024-initial.png` | 768 x 1024 | Homepage / initial | Chrome headless fallback, 7 s virtual time | Captured; 447,187 bytes | Actual PNG 768 x 1024; visual measurements estimated |
+| `homepage-390x844-initial.png` | 390 x 844 | Homepage / initial | Chrome headless fallback, 7 s virtual time | Captured; 339,613 bytes | Actual PNG 390 x 844; visual measurements estimated |
+| `bachelor-1440x900-initial.png` | 1440 x 900 | Bachelor page / initial | Chrome headless fallback, 7 s virtual time | Captured; 403,223 bytes | Actual PNG 1440 x 900; visual measurements estimated |
 
-No screenshot artifacts exist for this pass, so there is no AO-local screenshot location to reference. The required visual-browser command was unavailable (`ao` absent from PowerShell `PATH`), and the Lead-provided absolute executable path `C:\Users\BearYang\AppData\Local\Programs\agent-orchestrator\resources\daemon\ao.exe` also returned PowerShell `CommandNotFoundException` when `browser status --json` was attempted. No non-AO browser was used as a substitute.
+The first unprivileged AO CLI call was unavailable, but the escalated absolute AO CLI succeeded: it connected, opened the homepage, waited for load, captured accessibility snapshots, accepted Toggle-navigation and Next-carousel clicks, and accepted scroll commands. AO painted-panel screenshot calls timed out; Chrome headless was used only under the Lead-authorized fallback.
 
 When capture is possible, store files outside Git at:
 
-`C:\Users\BearYang\.ao\data\artifacts\nbu-mockup-2\visual-research\YYYY-MM-DD\`
+`C:\Users\BearYang\.ao\data\artifacts\nbu-mockup-2\visual-research\2026-10-08\`
 
 Suggested filename convention (do not treat as an existing file):
 
@@ -41,15 +42,15 @@ Suggested filename convention (do not treat as an existing file):
 
 | Asset class | Rendered source URL | Licence/permission evidence | May be reused or redistributed? |
 | --- | --- | --- | --- |
-| University logo | Not observed; no rendered asset URL captured | None obtained | No — default deny. |
-| Homepage/banner images | Not observed; no rendered asset URL captured | None obtained | No — default deny. |
-| Faculty/news images | Not observed; no rendered asset URL captured | None obtained | No — default deny. |
-| Webfonts | Not observed; no rendered asset URL captured | None obtained | No — default deny. |
-| Screenshots | None created | N/A | No source screenshot was captured or committed. |
+| University logo | Rendered visually; exact asset URL not captured | None obtained | No — default deny. |
+| Homepage/banner images | Rendered visually; exact asset URL not captured | None obtained | No — default deny. |
+| Faculty/news images | Not inspected beyond initial captures; exact asset URL not captured | None obtained | No — default deny. |
+| Webfonts | Rendered; exact asset URL not captured | None obtained | No — default deny. |
+| Screenshots | Four external-only PNGs listed above | N/A | Do not commit or redistribute without a project-approved basis. |
 
 ## Observed versus estimated values
 
-There are no observed visual measurements and no estimates in this pass. The timestamp, URLs, AO-browser unavailability, public text-page access, and student-page crawler result are process/access evidence, not visual measurements.
+Actual PNG dimensions are observed metadata. Layout, colour, and shape values in `docs/visual-research.md` and `docs/design-specification.md` are estimates from screenshots and are marked as such.
 
 ## Repository safety verification target
 
