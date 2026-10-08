@@ -45,6 +45,28 @@
 
 No confirmed application defects were found.
 
-## Final status
+## Initial status
 
-Build-quality checks and direct-route/content checks pass. Final regression remains required after the Lead’s refactor handoff, with particular attention to the currently unverified click interactions and exact responsive viewport behavior.
+Build-quality checks and direct-route/content checks passed. The following final-regression section supersedes this initial status after the Lead’s refactor handoff.
+
+## Final Regression — 2026-10-08 (Asia/Bangkok)
+
+**Refactor under test:** Worker 4 commit `75f5c93`, cherry-picked onto this QA lineage as `6a4a7a7` (`refactor: strengthen link and service types`). The refactor adds stronger link/service types and shared external-link behavior; it does not change the researched content, route inventory, or intended UI behavior.
+
+### Commands and results
+
+| Command / check | Actual result | Status |
+| --- | --- | --- |
+| First `npm ci` attempt | Failed with `EPERM` unlinking `node_modules\\lightningcss-win32-x64-msvc\\lightningcss.win32-x64-msvc.node`; the QA session’s previously started Vite process (PID 15696, port 4173) held the file. | Environment recovery required |
+| Dependency recovery | Confirmed PID 15696 ran Vite from this worktree, stopped only that process, then reran `npm ci`. The clean install added 177 packages, audited 178 packages, and reported 0 vulnerabilities. | Pass |
+| `npm run lint` | ESLint exited `0`. | Pass |
+| `npm run typecheck` | `tsc -b --pretty false` exited `0`. | Pass |
+| `npm run build` | `tsc -b && vite build` exited `0`; Vite transformed 1,908 modules. | Pass |
+| Browser route checks | Fresh Vite server on `http://127.0.0.1:4175/`. Home loaded with its expected content; `/faculties`, `/programs`, `/news`, `/admissions`, and `/student-services` each loaded and satisfied a wait for its page-specific heading. | Pass |
+| Browser content/error check | Route content remained consistent with `docs/research.md`; AO Browser reported no page errors. | Pass |
+| Mobile-menu interaction | `Open menu` was visible with `aria-expanded=false`. AO Browser reported input dispatched, but timed out waiting for a DOM change; the follow-up snapshot remained closed. | Not verified — QA-LIM-01 |
+| Visible SPA navigation | Clicking the visible `Faculties` link was dispatched, but the expected `/faculties` URL did not change before timeout. Direct loading of that route passed. | Not verified — QA-LIM-01 |
+
+### Final recommendation
+
+**PASS with limitations.** The scoped refactor preserves build, type, lint, direct-route, content, and browser-error regression results. No application defect is established by the repeated click postcondition failures because the AO Browser dispatches input without observing any state or URL change, including across a fresh server run; retain QA-LIM-01. Before release, complete manual verification of mobile-menu open/close, click-driven SPA navigation, and exact responsive layouts at representative mobile, tablet, and desktop viewport widths.
