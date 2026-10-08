@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Georgia, Cambria, "Times New Roman", serif;
+}
+
+:root { font-family: var(--font-sans); color: #0f172a; background: #fafaf9; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { text-decoration: none; }
+:focus-visible { outline: 3px solid #f5c451; outline-offset: 3px; }
+
+@utility page-width { width: min(100% - 2rem, 76rem); margin-inline: auto; }
+@utility eyebrow { font-size: .72rem; line-height: 1rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #047857; margin-bottom: .8rem; }
+@utility section-title { font-family: var(--font-display); font-size: clamp(2.35rem, 5vw, 4rem); line-height: 1.04; font-weight: 600; letter-spacing: -.025em; color: #0f172a; }
+@utility primary-button { display: inline-flex; min-height: 3.25rem; align-items: center; justify-content: center; gap: .6rem; border-radius: 999px; background: #fcd34d; padding-inline: 1.5rem; font-weight: 800; color: #052e16; transition: .2s; &:hover { background: #fde68a; transform: translateY(-2px); } }
+@utility secondary-button { display: inline-flex; min-height: 3.25rem; align-items: center; justify-content: center; border: 1px solid rgb(255 255 255 / .3); border-radius: 999px; padding-inline: 1.5rem; font-weight: 700; color: white; transition: .2s; &:hover { background: rgb(255 255 255 / .1); } }
+@utility icon-button { display: grid; width: 2.75rem; height: 2.75rem; place-items: center; border-radius: 999px; border: 1px solid rgb(255 255 255 / .2); color: white; transition: .2s; &:hover { background: rgb(255 255 255 / .1); } }
+@utility text-link { display: inline-flex; align-items: center; gap: .45rem; font-size: .9rem; font-weight: 800; color: #065f46; }
+
+.hero-grid::before { content: ''; position: absolute; width: 32rem; height: 32rem; right: -16rem; top: -11rem; border-radius: 999px; border: 6rem solid rgb(6 95 70 / .5); }
+@media (min-width: 640px) { .page-width { width: min(100% - 3rem, 76rem); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
