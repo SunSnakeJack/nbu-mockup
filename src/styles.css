@@ -242,10 +242,13 @@ header { position: relative; }
 .dropdown-panel { width: max-content; min-width: 182px; max-width: 390px; max-height: calc(100vh - 155px); overflow-y: auto; border-top: 0; border-radius: 0 0 5px 5px; }
 .dropdown-panel button { width: 100%; display: block; padding: 9px 9px; border: 0; border-bottom: 1px solid #eef1f4; background: white; color: #2b2b2b; text-align: left; font-size: 14px; cursor: default; }
 .dropdown-panel button:hover, .dropdown-panel button:focus-visible { background: #f2f7fd; color: #006ee6; }
+.dropdown-panel a { width: 100%; display: block; padding: 9px; border-bottom: 1px solid #eef1f4; background: white; color: #2b2b2b; text-align: left; font-size: 14px; cursor: pointer; }
+.dropdown-panel a:hover, .dropdown-panel a:focus-visible { background: #f2f7fd; color: #006ee6; }
 .pathway-card { border: 0; cursor: default; }
 .all-news { border: 0; cursor: default; }
 .mobile-nav-item > button { min-height: 44px; padding: 10px 5px; border: 0; background: transparent; color: white; text-align: left; font-weight: 700; }
 .mobile-subnav button { width: 100%; display: block; padding: 8px; border: 0; background: transparent; color: #dcecff; text-align: left; font-size: 13px; }
+.mobile-subnav a { width: 100%; display: block; padding: 8px; color: #dcecff; text-align: left; font-size: 13px; }
 
 @media (max-width: 900px) {
   .highlight-card { width: calc((100vw - 92px) / 2); }
@@ -273,7 +276,7 @@ header { position: relative; }
   .mobile-nav-item > button { width: 100%; min-height: 40px; padding: 8px 0; display: flex; align-items: center; color: white; font-size: 16px; }
   .mobile-nav-item > button::after { content: ''; }
   .mobile-subnav { margin: 0 0 4px; padding: 10px 15px; border-radius: 5px; background: white; }
-  .mobile-subnav button { padding: 8px 0; color: #242424; font-size: 14px; }
+  .mobile-subnav button, .mobile-subnav a { padding: 8px 0; color: #242424; font-size: 14px; }
   .hero-stage { height: 493px; }
   .architecture-lines { background-position: center; }
   .carousel-frame { top: 50px; left: 12px; width: calc(100% - 24px); height: auto; aspect-ratio: 1 / 1; transform: none; }
