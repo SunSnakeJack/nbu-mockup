@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type ComponentType, type ReactNode } from 'react'
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import {
-  BadgeDollarSign, BookOpen, Building2, ChevronDown, ChevronLeft, ChevronRight,
-  CircleUserRound, ExternalLink, Globe2, GraduationCap, Landmark, Mail, Menu,
-  MessageCircle, Monitor, Newspaper, Search, ShieldCheck, Trophy, UsersRound,
+  BadgeDollarSign, BookOpen, ChevronDown, ChevronLeft, ChevronRight,
+  CircleUserRound, ExternalLink, Globe2, GraduationCap, Mail, Menu,
+  MessageCircle, Monitor, Newspaper, Search, ShieldCheck, UsersRound,
   Video, X,
 } from 'lucide-react'
 import { faculties, newsItems, officialProgramPages, serviceItems } from './data'
@@ -31,32 +31,49 @@ const pathways: Array<{ label: string; to: string; icon: ComponentType<{ size?: 
   { label: 'ทุนการศึกษา', to: '/admissions', icon: BadgeDollarSign },
 ]
 
+const bannerSlides = [
+  { src: '/assets/banners/business-online.jpg', alt: 'หลักสูตรบริหารธุรกิจบัณฑิต สาขาวิชาบริหารธุรกิจ รูปแบบออนไลน์' },
+  { src: '/assets/banners/public-health.jpg', alt: 'หลักสูตรสาธารณสุขศาสตร์ ระดับปริญญาตรี' },
+  { src: '/assets/banners/banner-aw-01.jpg', alt: 'ประชาสัมพันธ์หลักสูตรมหาวิทยาลัยนอร์ทกรุงเทพ' },
+  { src: '/assets/banners/banner-aw-02.jpg', alt: 'ประชาสัมพันธ์การศึกษามหาวิทยาลัยนอร์ทกรุงเทพ' },
+  { src: '/assets/banners/fry-to-fry.jpg', alt: 'ข่าวประชาสัมพันธ์มหาวิทยาลัยนอร์ทกรุงเทพ' },
+  { src: '/assets/banners/edpex.jpg', alt: 'ข่าวกิจกรรมมหาวิทยาลัยนอร์ทกรุงเทพ' },
+  { src: '/assets/banners/sport-portfolio.jpg', alt: 'การรับสมัครนักศึกษาด้านกีฬา' },
+]
+
 const highlightCards = [
-  ['Campus development', 'พื้นที่การเรียนรู้และอาคารมหาวิทยาลัย'],
-  ['Student success', 'กิจกรรมและความสำเร็จของนักศึกษา'],
-  ['Career pathways', 'เตรียมความพร้อมสู่โลกการทำงาน'],
-  ['Academic partnerships', 'ความร่วมมือและเครือข่ายทางวิชาการ'],
+  { image: '/assets/nbu-highlights/highlight-02.jpg', title: 'มหาวิทยาลัยนอร์ทกรุงเทพ เตรียมเปิดโครงการ NorthMed Hospital & Healthcare Center' },
+  { image: '/assets/nbu-highlights/highlight-04.jpg', title: 'ทีมนักกีฬามหาวิทยาลัยนอร์ทกรุงเทพสร้างชื่อในการแข่งขันระดับประเทศ' },
+  { image: '/assets/nbu-highlights/highlight-01.png', title: 'เตรียมตัวฝึกงาน หางานง่าย ๆ กับ JOBTOPGUN สำหรับนักศึกษามหาวิทยาลัยนอร์ทกรุงเทพ' },
+  { image: '/assets/nbu-highlights/highlight-03.jpg', title: 'มหาวิทยาลัยนอร์ทกรุงเทพจับมือเครือข่าย เสริมสร้างองค์ความรู้ทางวิชาการ' },
 ]
 
 const newsCards = [
-  ['ทุนกีฬา ปีการศึกษา 2570', 'Scholarship'],
-  ['กำหนดการลงทะเบียน 1/2569', 'Registration'],
-  ['ลงทะเบียนระดับบัณฑิตศึกษา', 'Graduate'],
-  ['หลักสูตร TESOL', 'Programs'],
-  ['ระบบบริการนักศึกษา', 'Services'],
-  ['ข่าวประชาสัมพันธ์มหาวิทยาลัย', 'Campus'],
-  ['กิจกรรมวิชาการและงานวิจัย', 'Research'],
-  ['ประกาศสำหรับนักศึกษา', 'Notice'],
+  { image: '/assets/news/sport-scholarship.png', title: 'เปิดคัดเลือกนักกีฬาครั้งที่ 1 ประจำปีการศึกษา 2570' },
+  { image: '/assets/news/news-01.jpg', title: 'การจองคิวนำส่งเอกสารการกู้ยืมประจำภาคเรียนที่ 1/2569' },
+  { image: '/assets/news/bachelor-registration.jpg', title: 'ลงทะเบียนภาคเรียนที่ 1/2569 ระดับปริญญาตรี' },
+  { image: '/assets/news/tesol-registration.png', title: 'ลงทะเบียนภาคเรียนที่ 1/2569 ระดับปริญญาตรี (TESOL)' },
+  { image: '/assets/news/news-02.jpg', title: 'ลงทะเบียนภาคการศึกษาที่ 1/2569 ระดับบัณฑิตศึกษา' },
+  { image: '/assets/news/master-registration.png', title: 'ลงทะเบียนภาคเรียนที่ 3/2568 ระดับบัณฑิตศึกษา' },
+  { image: '/assets/news/safety-training.jpg', title: 'การบริหารจัดการอัคคีภัยในภาคอุตสาหกรรม ภายใต้บริบทความเสี่ยงที่ซับซ้อน' },
+  { image: '/assets/news/student-loan.png', title: 'กำหนดการรับบัตรประจำตัวนักศึกษา' },
 ]
 
-const affiliateNames = ['สมาคมศิษย์เก่า', 'สโมสรฟุตบอลมหาวิทยาลัย', 'SIAM EDUCATION', 'SBAC', 'NBU POLL', 'NBU SciTech']
+const affiliateLogos = [
+  { image: '/assets/affiliates/alumni.png', alt: 'สมาคมศิษย์เก่า มหาวิทยาลัยนอร์ทกรุงเทพ' },
+  { image: '/assets/affiliates/nbu-football.png', alt: 'สโมสรฟุตบอลมหาวิทยาลัยนอร์ทกรุงเทพ' },
+  { image: '/assets/affiliates/siamcom.png', alt: 'Siam Computer and Language School' },
+  { image: '/assets/affiliates/sbac.png', alt: 'วิทยาลัยเทคโนโลยีสยามบริหารธุรกิจ SBAC' },
+  { image: '/assets/affiliates/nbu-poll.png', alt: 'นอร์ทแบงค็อกโพล' },
+  { image: '/assets/affiliates/scitech.png', alt: 'มหาวิทยาลัยนอร์ทกรุงเทพ และ SCiTech' },
+]
 
 function Disclosure() {
   return <div className="prototype-notice"><ShieldCheck size={13} /> ต้นแบบเว็บไซต์อย่างไม่เป็นทางการ — ไม่ใช่เว็บไซต์ของมหาวิทยาลัย <a href="https://northbkk.ac.th/" target="_blank" rel="noreferrer">ดูเว็บไซต์ทางการ <ExternalLink size={11} /></a></div>
 }
 
 function Wordmark() {
-  return <Link className="wordmark" to="/" aria-label="หน้าแรกต้นแบบ NBU"><strong>NORTH</strong><span>BANGKOK</span><small>UNIVERSITY · UNOFFICIAL</small></Link>
+  return <Link className="wordmark" to="/" aria-label="หน้าแรกต้นแบบ NBU"><span>NORTH</span><strong>BANGKOK</strong><small>UNIVERSITY · มหาวิทยาลัยนอร์ทกรุงเทพ</small></Link>
 }
 
 function Header() {
@@ -91,29 +108,20 @@ function Header() {
   </header>
 }
 
-function HeroArtwork({ slide }: { slide: number }) {
-  return <div className={`hero-art slide-${slide}`}>
-    <div className="stadium-lines" />
-    <div className="hero-copy">
-      <span>{slide === 0 ? 'NBU OPEN HOUSE' : slide === 1 ? 'READY FOR YOUR FUTURE' : 'LEARN WITHOUT LIMITS'}</span>
-      <strong>{slide === 0 ? 'ค้นพบเส้นทางของคุณ' : slide === 1 ? 'เริ่มต้นอนาคตที่นี่' : 'มากกว่าการเรียนรู้'}</strong>
-      <p>พื้นที่ต้นแบบกราฟิก CSS — ไม่มีภาพถ่าย โลโก้ หรือคิวอาร์โค้ดจากต้นฉบับ</p>
-    </div>
-    <div className="building-illustration" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div>
-    <div className="hero-number">0{slide + 1}</div>
-  </div>
-}
-
 function HeroCarousel() {
   const [slide, setSlide] = useState(0)
-  const total = 3
+  const total = bannerSlides.length
   const move = (direction: number) => setSlide((current) => (current + direction + total) % total)
+  useEffect(() => {
+    const timer = window.setInterval(() => setSlide((current) => (current + 1) % total), 6500)
+    return () => window.clearInterval(timer)
+  }, [total])
   return <section className="hero-stage" aria-label="ภาพประชาสัมพันธ์ต้นแบบ">
     <div className="architecture-lines" />
     <div className="carousel-frame">
-      <button className="carousel-arrow prev" type="button" onClick={() => move(-1)} aria-label="Previous"><ChevronLeft /></button>
-      <HeroArtwork slide={slide} />
-      <button className="carousel-arrow next" type="button" onClick={() => move(1)} aria-label="Next"><ChevronRight /></button>
+      <button className="carousel-arrow prev" type="button" onClick={() => move(-1)} aria-label="ภาพก่อนหน้า"><ChevronLeft /></button>
+      {bannerSlides.map((item, index) => <img className="hero-slide" key={item.src} src={item.src} alt={item.alt} aria-hidden={slide !== index} data-active={slide === index} />)}
+      <button className="carousel-arrow next" type="button" onClick={() => move(1)} aria-label="ภาพถัดไป"><ChevronRight /></button>
       <div className="carousel-dots">{Array.from({ length: total }, (_, index) => <button type="button" key={index} aria-label={`ไปสไลด์ ${index + 1}`} aria-current={slide === index} onClick={() => setSlide(index)} />)}</div>
     </div>
   </section>
@@ -124,15 +132,15 @@ function PathwaySection() {
 }
 
 function HighlightsSection() {
-  return <section className="highlights-section"><div className="blueprint-lines" /><div className="content-width section-content"><h2>NBU Highlights</h2><div className="highlight-grid">{highlightCards.map(([title, body], index) => <article className="highlight-card" key={title}><div className={`highlight-graphic graphic-${index + 1}`}><span>{String(index + 1).padStart(2, '0')}</span><Building2 /></div><div><h3>{title}</h3><p>{body}</p><span className="content-label">เนื้อหาต้นแบบ</span></div></article>)}</div></div></section>
+  return <section className="highlights-section"><div className="blueprint-lines" /><div className="content-width section-content"><h2>NBU Highlights</h2><div className="highlight-grid">{highlightCards.map((item) => <article className="highlight-card" key={item.title}><img src={item.image} alt="" /><h3>{item.title}</h3></article>)}</div></div></section>
 }
 
 function NewsSection() {
-  return <section className="news-section"><div className="content-width"><h2>ข่าวประชาสัมพันธ์</h2><p className="section-note">การ์ดต่อไปนี้เป็นข้อความต้นแบบเชิงโครงสร้าง โปรดตรวจสอบข่าวล่าสุดจากแหล่งทางการ</p><div className="news-grid">{newsCards.map(([title, category], index) => <article className="news-card" key={title}><div className={`news-poster poster-${(index % 4) + 1}`}><span>{category}</span>{index % 4 === 0 ? <Trophy /> : index % 4 === 1 ? <Newspaper /> : index % 4 === 2 ? <Monitor /> : <GraduationCap />}</div><div className="news-copy"><small>ข้อมูลต้นแบบ</small><h3>{title}</h3><p>ดูรายละเอียดและวันเวลาที่เว็บไซต์ทางการก่อนดำเนินการ</p></div></article>)}</div><Link className="all-news" to="/news">ดูข่าวทั้งหมด</Link></div></section>
+  return <section className="news-section"><div className="content-width"><h2>ข่าวประชาสัมพันธ์</h2><div className="news-grid">{newsCards.map((item) => <article className="news-card" key={item.title}><img src={item.image} alt="" /><h3>{item.title}</h3></article>)}</div><Link className="all-news" to="/news">อ่านข่าวทั้งหมด</Link></div></section>
 }
 
 function AffiliatesSection() {
-  return <section className="affiliates-section"><div className="content-width"><h2>สมาคม สโมสร และสถาบันในเครือ</h2><p>ใช้ชื่อข้อความแทนเครื่องหมายการค้าที่ไม่อนุญาตให้นำมาใช้ซ้ำ</p><div className="affiliate-grid">{affiliateNames.map((name) => <div key={name}><Landmark /><strong>{name}</strong><small>TEXT SUBSTITUTE</small></div>)}</div></div></section>
+  return <section className="affiliates-section"><div className="content-width"><h2>สมาคม สโมสร และสถาบันในเครือ</h2><div className="affiliate-grid">{affiliateLogos.map((item) => <div key={item.image}><img src={item.image} alt={item.alt} /></div>)}</div></div></section>
 }
 
 function Footer() {
