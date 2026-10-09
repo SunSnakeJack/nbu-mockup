@@ -82,6 +82,21 @@ The approved Cycle 1 visual QA regression records successful `npm ci` (177 packa
 
 An initial build attempt in that regression encountered a transient Windows `EPERM` while cleaning `dist/assets`; the retry passed and no source or worktree recovery action was required. Fresh local verification is required from the original checkout after its safe fast-forward; only a clearly scoped transient file-lock retry is permitted.
 
+## Fresh original-checkout validation and integration result
+
+The original checkout at `C:\Users\BearYang\OneDrive - northbkk.ac.th\เดสก์ท็อป\nbu-mockup` was clean at `5ef3ff8` and safely fast-forwarded, without a merge commit, to the Round 2 delivery-report baseline `0f9da8033bda826a63110540634351098d13f2a7`. It contained `src`, `docs`, `package.json`, `README.md`, and every required Round 2 report. This Vite project does not use a `public/` directory.
+
+The following fresh commands then completed from that original checkout:
+
+| Command | Actual result |
+| --- | --- |
+| `npm ci` | Added 177 packages, audited 178 packages, and reported 0 vulnerabilities. |
+| `npm run lint` | ESLint exited 0. |
+| `npm run typecheck` | `tsc -b --pretty false` exited 0. |
+| `npm run build` | `tsc -b && vite build` exited 0; Vite transformed 1,908 modules and wrote ignored `dist/` output. |
+
+No transient lock retry was needed for this fresh build. This final report update only records the completed validation and local integration result; local `main` must fast-forward to this report commit before any later delivery decision. No remote action is authorized.
+
 ## Local integration gate
 
 Before local `main` is advanced, the original checkout must be clean at `5ef3ff8`, remain an ancestor of this report commit, and fast-forward without conflict. No reset, forced update, merge commit, or remote action is permitted.
