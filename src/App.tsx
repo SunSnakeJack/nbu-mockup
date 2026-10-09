@@ -44,7 +44,7 @@ const affiliateLogos = [
   ['/assets/affiliates/nbu-poll.png', 'นอร์ทแบงค็อกโพล'], ['/assets/affiliates/scitech.png', 'SCiTech'],
 ]
 
-function Disclosure() { return <div className="prototype-notice"><ShieldCheck size={13} /> ต้นแบบเว็บไซต์อย่างไม่เป็นทางการ — ไม่ใช่เว็บไซต์ของมหาวิทยาลัย <span>ดูเว็บไซต์ทางการ</span></div> }
+function Disclosure() { return <div className="prototype-notice"><ShieldCheck size={13} /> ต้นแบบเว็บไซต์อย่างไม่เป็นทางการ — ไม่ใช่เว็บไซต์ของมหาวิทยาลัย <a href="https://northbkk.ac.th/" target="_blank" rel="noreferrer">ดูเว็บไซต์ทางการ</a></div> }
 function Wordmark() { return <div className="wordmark" aria-label="มหาวิทยาลัยนอร์ทกรุงเทพ"><span>NORTH</span><strong>BANGKOK</strong><small>UNIVERSITY · มหาวิทยาลัยนอร์ทกรุงเทพ</small></div> }
 
 function Header() {
