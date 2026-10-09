@@ -3,6 +3,22 @@
 **Reviewed lineage:** Lead-approved commits `ee21d6b`, `ed7f63e`, `aca8a33`, `6aa3d35`, and `4a0faf7657eb7040cae1914a7001c1e1905cc65e`, cherry-picked locally before this refactor.
 **Review date:** 2026-10-08 (Asia/Bangkok)
 
+## Round 2 visual refinement, Cycle 1
+
+| QA item | Disposition | Change |
+| --- | --- | --- |
+| VQA-01: the 26 px disclosure shifted the source-equivalent header and hero stack | Fixed. | Moved the disclosure out of normal flow: it is an absolute compact overlay at desktop/tablet widths and a compact fixed lower overlay at the 390 px mobile state. The utility header, primary navigation, and hero now begin at their prior source-equivalent document positions. |
+| VQA-02 through VQA-06 | Preserved. | No geometry, content, asset, font, logo, QR, photo, affiliate-mark, or carousel changes were made. |
+| AO Browser click limitation | Not an application defect. | No interaction change was made or claimed. |
+
+### Cycle 1 validation evidence
+
+- Final external-only screenshots: `C:\Users\BearYang\.ao\data\artifacts\nbu-mockup-4\round2-visual-qa\cycle1-final\homepage-1440x900-final.png`, `homepage-768x1024-final.png`, `homepage-390x844-final.png`, and `homepage-1440x6000-final.png`.
+- Visual comparison against the Worker 1 references and Worker 3 overlay evidence confirms that the former 26 px normal-flow offset is absent. At 1440 and 768 the compact top overlay ends before the visible utility controls; at 390 it is fixed beneath the visible hero rather than covering the utility controls, hamburger, or hero content.
+- Local HTTP checks returned `200` for `/`, `/programs`, `/bachelor`, `/faculties`, `/news`, `/admissions`, `/student-services`, `/about`, `/research`, and `/contact`.
+- The current environment could not invoke the AO browser executable at the supplied path, so no new AO click conclusion is made. The existing QA-LIM-01 disposition remains unchanged.
+- Remaining visual mismatches are only the documented safe substitutions: text wordmark/system font metrics and original CSS/Lucide geometry in place of source logos, photos, QR code, carousel imagery, and affiliate marks.
+
 ## QA disposition and changes
 
 | QA item or review finding | Disposition | Change |

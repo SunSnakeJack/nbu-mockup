@@ -4,6 +4,12 @@
 
 This reconstruction follows the screenshot-backed layout evidence in `visual-research.md`, `design-specification.md`, and `reference-manifest.md`. It is an unofficial prototype and is not an official North Bangkok University website.
 
+## Cycle 1 refinement: disclosure placement
+
+The required unofficial-prototype disclosure is a compact, non-flow overlay at desktop and tablet widths. This preserves the source-equivalent utility header, primary navigation, and hero start positions while retaining a readable external link to the official NBU site. At the narrow mobile capture width, it moves to a compact fixed lower overlay so it does not cover the intentionally cropped utility controls or the carousel start. It uses only HTML, CSS, and Lucide; no source-site asset, logo, font, QR code, photo, or affiliate mark was added.
+
+Cycle 1 final capture evidence is external-only at `C:\Users\BearYang\.ao\data\artifacts\nbu-mockup-4\round2-visual-qa\cycle1-final\`: `homepage-1440x900-final.png`, `homepage-768x1024-final.png`, `homepage-390x844-final.png`, and `homepage-1440x6000-final.png`. Visual inspection confirms the utility header begins at the top of the document at 1440/768/390, the primary navigation and hero retain their established start positions, and the disclosure does not cover the visible utility controls, mobile hamburger, or hero content. The expected safe-substitution differences from source references remain.
+
 ## Safe substitutions
 
 No source screenshot, university logo, banner, photograph, partner mark, QR code, third-party font, or other source-site binary is included in the repository.
